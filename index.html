@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kapalı Çarşı Canlı Fiyatlar</title>
+<meta name="description" content="Kapalı Çarşı altın, gümüş ve döviz alış satış fiyatları canlı olarak.">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #f6f7f9;
+    --bg2: #ffffff;
+    --card: #ffffff;
+    --border: #e2e6ec;
+    --text: #161d26;
+    --muted: #6a7683;
+    --gold: #b07708;
+    --buy: #15a34a;
+    --sell: #dc2626;
+    --accent: #0369a1;
+    --golge: 0 1px 2px rgba(16, 24, 40, .05);
+    --golge2: 0 4px 14px rgba(16, 24, 40, .08);
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    min-height: 100vh;
+    line-height: 1.5;
+  }
+
+  .kutu { max-width: 1180px; margin: 0 auto; padding: 0 18px; }
+
+  header {
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+    padding: 18px 0;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+  }
+
+  .ust-ic {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .marka { display: flex; align-items: center; gap: 12px; }
+  .marka .nokta {
+    width: 11px; height: 11px; border-radius: 50%;
+    background: var(--buy); box-shadow: 0 0 12px var(--buy);
+    animation: nabiz 2s infinite;
+  }
+  @keyframes nabiz { 0%,100% { opacity: 1 } 50% { opacity: .35 } }
+  .marka h1 { font-size: 20px; letter-spacing: .5px; }
+  .marka small { display: block; color: var(--muted); font-size: 12px; font-weight: 400; }
+
+  .sag-bilgi { text-align: right; font-size: 12px; color: var(--muted); }
+  .sag-bilgi strong { display: block; color: var(--accent); font-size: 13px; }
+
+  button {
+    background: var(--card);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 14px;
+    cursor: pointer;
+    font-size: 13px;
+    font-family: inherit;
+  }
+  button:hover { border-color: var(--accent); color: var(--accent); }
+
+  .hakkimda { padding: 34px 0 10px; }
+  .hakkimda h2 { font-size: 17px; color: var(--gold); margin-bottom: 8px; }
+  .hakkimda p { color: var(--muted); max-width: 720px; font-size: 14.5px; }
+
+  .serit {
+    overflow: hidden;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background: var(--bg2);
+    margin: 26px 0 8px;
+    white-space: nowrap;
+  }
+  .serit-ic { display: inline-block; padding: 9px 0; animation: kaydir 42s linear infinite; }
+  @keyframes kaydir { from { transform: translateX(0) } to { transform: translateX(-50%) } }
+  .serit-ic span { margin: 0 15px; font-size: 13px; }
+  .serit-ic b { color: var(--gold); }
+  .serit-ic .a { color: var(--buy); }
+  .serit-ic .s { color: var(--sell); }
+
+  main { padding-bottom: 50px; }
+
+  .bolum { margin-top: 34px; }
+  .bolum-bas {
+    display: flex; align-items: baseline; gap: 12px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 9px; margin-bottom: 18px;
+  }
+  .bolum-bas h3 { font-size: 16px; }
+  .bolum-bas span { color: var(--muted); font-size: 12.5px; }
+
+  .izgara {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 13px;
+  }
+
+  .kart {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    padding: 15px 16px;
+    box-shadow: var(--golge);
+    transition: box-shadow .18s, transform .18s;
+  }
+  .kart:hover { box-shadow: var(--golge2); transform: translateY(-2px); }
+
+  .kart .ust { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+  .kart .ad { font-size: 13.5px; color: var(--muted); }
+  .kart .kod {
+    font-size: 10.5px; color: var(--muted);
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: 5px; padding: 2px 6px; font-family: Consolas, monospace;
+  }
+  .kart .fark-kutu { display: flex; gap: 14px; margin-top: 11px; }
+  .kart .f { flex: 1; }
+  .kart .f span { display: block; font-size: 11px; color: var(--muted); }
+  .kart .f b {
+    font-size: 16.5px;
+    font-family: Consolas, "Courier New", monospace;
+    letter-spacing: -.3px;
+  }
+  .f.alis b { color: var(--buy); }
+  .f.satis b { color: var(--sell); }
+
+  @keyframes yukseldi {
+    0%   { background: #dcfce7; box-shadow: 0 0 0 4px #dcfce7; }
+    100% { background: transparent; box-shadow: 0 0 0 0 transparent; }
+  }
+  @keyframes dustu {
+    0%   { background: #fee2e2; box-shadow: 0 0 0 4px #fee2e2; }
+    100% { background: transparent; box-shadow: 0 0 0 0 transparent; }
+  }
+  .f b.yukseldi { animation: yukseldi 1.4s ease-out; border-radius: 4px; padding: 0 3px; }
+  .f b.dustu    { animation: dustu 1.4s ease-out; border-radius: 4px; padding: 0 3px; }
+  .kart .alt {
+    margin-top: 11px; padding-top: 9px;
+    border-top: 1px dashed var(--border);
+    display: flex; justify-content: space-between;
+    font-size: 11.5px; color: var(--muted);
+  }
+  .kart .kapanis { color: var(--gold); }
+
+  .yukleniyor { color: var(--muted); font-size: 13px; padding: 22px 0; text-align: center; }
+  .hata {
+    background: #fef2f2; border: 1px solid #fecaca; color: #b91c1c;
+    border-radius: 9px; padding: 13px 15px; font-size: 13.5px; margin-top: 22px;
+  }
+
+  footer {
+    border-top: 1px solid var(--border);
+    background: var(--bg2);
+    padding: 24px 0;
+    font-size: 12.5px;
+    color: var(--muted);
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+  footer p + p { margin-top: 7px; }
+  .uyari { color: #b45309; }
+
+  @media (max-width: 560px) {
+    .sag-bilgi { text-align: left; }
+    .kart .f b { font-size: 15px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="kutu ust-ic">
+    <div class="marka">
+      <span class="nokta"></span>
+      <div>
+        <h1>Kapalı Çarşı Canlı Fiyatlar</h1>
+        <small>Altın · Gümüş · Döviz &nbsp;|&nbsp; alış / satış</small>
+      </div>
+    </div>
+    <div class="sag-bilgi">
+      <strong id="saat">--:--:--</strong>
+      <span id="guncelleme">yükleniyor…</span>
+    </div>
+    <button id="yenile">Yenile</button>
+  </div>
+</header>
+
+<div class="serit"><div class="serit-ic" id="serit"></div></div>
+
+<main class="kutu">
+
+  <section class="hakkimda">
+    <h2>Hakkımda</h2>
+    <p>
+      Bu sayfa, Kapalı Çarşı'daki altın, gümüş ve
+      döviz alış–satış fiyatlarını her 30 dakikada bir otomatik olarak çekip
+      burada gösteren basit bir çalışma. Fiyatlar bilgilendirme amaçlıdır;
+      işlem öncesi kuyumcudan teyit etmeniz gerekir.
+    </p>
+  </section>
+
+  <section class="bolum">
+    <div class="bolum-bas">
+      <h3>🥇 Altın</h3><span id="altin-sayi"></span>
+    </div>
+    <div class="izgara" id="altin"><div class="yukleniyor">Fiyatlar yükleniyor…</div></div>
+  </section>
+
+  <section class="bolum">
+    <div class="bolum-bas">
+      <h3>🥈 Gümüş ve Emtia</h3><span id="gumus-sayi"></span>
+    </div>
+    <div class="izgara" id="gumus"><div class="yukleniyor">Fiyatlar yükleniyor…</div></div>
+  </section>
+
+  <section class="bolum">
+    <div class="bolum-bas">
+      <h3>💱 Döviz</h3><span id="doviz-sayi"></span>
+    </div>
+    <div class="izgara" id="doviz"><div class="yukleniyor">Fiyatlar yükleniyor…</div></div>
+  </section>
+
+  <div id="uyari-alani"></div>
+
+</main>
+
+<footer>
+  <div class="kutu">
+    <p>
+      Veri kaynağı: <a href="https://anlikaltinfiyatlari.com/altin/kapalicarsi" target="_blank" rel="noopener">Kapalı Çarşı ekranı</a>
+      ve <a href="https://anlikaltinfiyatlari.com/doviz/nadir-doviz" target="_blank" rel="noopener">serbest piyasa döviz</a>.
+      Yedek kaynak: <a href="https://github.com/kessinc/darphane" target="_blank" rel="noopener">darphane</a> (günlük kapanış).
+    </p>
+    <p class="uyari">Bu bir kişisel çalışmadır; yatırım tavsiyesi değildir.</p>
+    <p>© <span id="yil"></span> · GitHub Pages ile yayınlanmaktadır.</p>
+  </div>
+</footer>
+
+<script>
+const DATA_URL = "./prices.json";
+const YENILELEME_SN = 60;
+let onceki = null;
+
+const bicim = new Intl.NumberFormat("tr-TR", {
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 2
+});
+
+function saatGuncelle() {
+  const simdi = new Date();
+  document.getElementById("saat").textContent =
+    simdi.toLocaleTimeString("tr-TR") + " · " +
+    simdi.toLocaleDateString("tr-TR", { day: "2-digit", month: "long", year: "numeric" });
+  document.getElementById("yil").textContent = simdi.getFullYear();
+}
+
+function kartKur(satir) {
+  const fark = satir.satis - satir.alis;
+  const yuzde = satir.alis ? (fark / satir.alis) * 100 : 0;
+  const kaynak = satir.source === "canli" ? "canlı" : "günlük kapanış";
+  const eski = onceki ? eskiDeger(satir.symbol) : null;
+  const degisti = eski !== null && eski !== satir.satis;
+  const sinif = degisti ? (satir.satis > eski ? "yukseldi" : "dustu") : "";
+
+  return `<div class="kart">
+    <div class="ust">
+      <span class="ad">${satir.name}</span>
+      <span class="kod">${satir.symbol}</span>
+    </div>
+    <div class="fark-kutu">
+      <div class="f alis"><span>ALIŞ (₺)</span><b>${bicim.format(satir.alis)}</b></div>
+      <div class="f satis"><span>SATIŞ (₺)</span><b class="${sinif}">${bicim.format(satir.satis)}</b></div>
+    </div>
+    <div class="alt">
+      <span>Fark ${bicim.format(fark)} TL · %${yuzde.toFixed(2).replace(".", ",")}</span>
+      <span class="kapanis">${kaynak}</span>
+    </div>
+  </div>`;
+}
+
+function ciz(grup, veri) {
+  const kutu = document.getElementById(grup);
+  if (!veri || !veri.length) {
+    kutu.innerHTML = `<div class="yukleniyor">Bu grupta veri yok.</div>`;
+    return 0;
+  }
+  kutu.innerHTML = veri.map(kartKur).join("");
+  return veri.length;
+}
+
+function seritCiz(veri) {
+  const hepsi = [...veri.gold, ...veri.silver, ...veri.forex];
+  const parca = hepsi.map(s =>
+    `<span><b>${s.symbol}</b> ` +
+    `<span class="a">${bicim.format(s.alis)}</span> / ` +
+    `<span class="s">${bicim.format(s.satis)}</span> TL</span>`
+  ).join("");
+  document.getElementById("serit").innerHTML = parca + parca;
+}
+
+function eskiDeger(symbol) {
+  if (!onceki) return null;
+  for (const grup of ["gold", "silver", "forex"]) {
+    const bulunan = onceki[grup].find(s => s.symbol === symbol);
+    if (bulunan) return bulunan.satis;
+  }
+  return null;
+}
+
+async function veriCek() {
+  const buton = document.getElementById("yenile");
+  buton.textContent = "Yükleniyor…";
+  buton.disabled = true;
+
+  try {
+    const yanit = await fetch(DATA_URL + "?t=" + Date.now(), { cache: "no-store" });
+    if (!yanit.ok) throw new Error("HTTP " + yanit.status);
+    const veri = await yanit.json();
+
+    if (!veri || !veri.gold) throw new Error("Beklenmeyen veri biçimi");
+
+    const a = ciz("altin", veri.gold);
+    const g = ciz("gumus", veri.silver);
+    const d = ciz("doviz", veri.forex);
+    seritCiz(veri);
+
+    onceki = veri;
+
+    document.getElementById("altin-sayi").textContent = a + " çeşit";
+    document.getElementById("gumus-sayi").textContent = g + " çeşit";
+    document.getElementById("doviz-sayi").textContent = d + " para birimi";
+    document.getElementById("guncelleme").textContent =
+      "Son veri: " + (veri.updated || "bilinmiyor") + " · " +
+      YENILELEME_SN + " sn'de bir yenilenir";
+    document.getElementById("uyari-alani").innerHTML = "";
+  } catch (hata) {
+    const mesaj = "Fiyatlar şu anda alınamadı (" + hata.message + "). " +
+      "Bağlantını kontrol et veya birazdan tekrar dene.";
+    const alan = document.getElementById("uyari-alani");
+    alan.innerHTML = `<div class="hata">${mesaj}</div>`;
+    if (onceki) {
+      document.getElementById("guncelleme").textContent =
+        "Bağlantı hatası — son başarılı veriler gösteriliyor";
+    } else {
+      document.getElementById("guncelleme").textContent = "veri alınamadı";
+    }
+  } finally {
+    buton.textContent = "Yenile";
+    buton.disabled = false;
+  }
+}
+
+saatGuncelle();
+setInterval(saatGuncelle, 1000);
+veriCek();
+setInterval(veriCek, YENILELEME_SN * 1000);
+document.getElementById("yenile").addEventListener("click", veriCek);
+</script>
+</body>
+</html>

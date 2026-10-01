@@ -1,0 +1,45 @@
+name: Fiyatlari Guncelle
+
+on:
+  schedule:
+    # Gunde 48 calisma (her 30 dakikada bir) yerine eskiden 288 (5 dakikada bir).
+    # Saat 00 ve 30'a kilitlendi; GitHub cron'u birkac dakika gecikmeyebilir.
+    - cron: "0 */30 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fiyat-guncelle
+  cancel-in-progress: false
+
+jobs:
+  guncelle:
+    name: Kapali Carsi fiyatlarini cek
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Depoyu indir
+        uses: actions/checkout@v4
+
+      - name: Python kur
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fiyatlari cek
+        run: python update_prices.py
+
+      - name: Degisikligi yukle
+        run: |
+          if git diff --quiet -- prices.json; then
+            echo "Fiyatlar degismedi, bir sey yapmaya gerek yok."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add prices.json
+          git commit -m "fiyat guncellemesi: $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git push
