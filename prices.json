@@ -1,77 +1,77 @@
 {
-  "updated": "2026-10-04 03:05:06",
-  "sourceTime": "06:04:59",
+  "updated": "2026-10-05 00:10:44",
+  "sourceTime": "03:10:42",
   "source": "Kapali Carsi + Nadir Doviz (canli)",
   "gold": [
     {
       "symbol": "HAS",
       "name": "Has Altın (gram)",
-      "alis": 6570.35,
-      "satis": 6607.24,
+      "alis": 6597.48,
+      "satis": 6613.3,
       "unit": "TL",
       "source": "canli"
     },
     {
       "symbol": "GR",
       "name": "Gram Altın",
-      "alis": 6537.5,
-      "satis": 6670.0,
+      "alis": 6564.55,
+      "satis": 6633.19,
       "unit": "TL",
       "source": "canli"
     },
     {
       "symbol": "CY",
       "name": "Çeyrek Altın",
-      "alis": 10516.94,
-      "satis": 11140.0,
+      "alis": 10753.0,
+      "satis": 10810.0,
       "unit": "TL",
       "source": "canli"
     },
     {
       "symbol": "YM",
       "name": "Yarım Altın",
-      "alis": 21031.77,
-      "satis": 22275.0,
+      "alis": 21506.0,
+      "satis": 21614.0,
       "unit": "TL",
       "source": "canli"
     },
     {
       "symbol": "TM",
       "name": "Tam Altın",
-      "alis": 42025.57,
-      "satis": 44545.0,
+      "alis": 42880.0,
+      "satis": 43102.0,
       "unit": "TL",
       "source": "canli"
     },
     {
       "symbol": "AT",
       "name": "Ata Altın",
-      "alis": 43208.56,
-      "satis": 44185.08,
+      "alis": 43605.0,
+      "satis": 44061.0,
       "unit": "TL",
       "source": "canli"
     },
     {
       "symbol": "BES",
       "name": "Ata 5'li",
-      "alis": 215869.03,
-      "satis": 233260.0,
+      "alis": 217697.0,
+      "satis": 220914.0,
       "unit": "TL",
       "source": "canli"
     },
     {
       "symbol": "GRM",
       "name": "Gremse (2,5)",
-      "alis": 105000.66,
-      "satis": 111390.0,
+      "alis": 106408.0,
+      "satis": 107242.0,
       "unit": "TL",
       "source": "canli"
     },
     {
       "symbol": "22A",
       "name": "22 Ayar Altın",
-      "alis": 5991.96,
-      "satis": 6435.0,
+      "alis": 6001.11,
+      "satis": 6195.88,
       "unit": "TL",
       "source": "canli"
     },
@@ -86,8 +86,8 @@
     {
       "symbol": "ONS",
       "name": "Ons Altın",
-      "alis": 4142.14,
-      "satis": 4142.14,
+      "alis": 4149.0,
+      "satis": 4149.6,
       "unit": "$",
       "source": "canli"
     }
@@ -96,8 +96,8 @@
     {
       "symbol": "GUM",
       "name": "Gümüş (gram)",
-      "alis": 86.61,
-      "satis": 98.15,
+      "alis": 89.799,
+      "satis": 97.795,
       "unit": "TL",
       "source": "canli"
     },
@@ -122,56 +122,56 @@
     {
       "symbol": "USD",
       "name": "ABD Doları",
-      "alis": 49.13,
-      "satis": 49.18,
+      "alis": 49.1061,
+      "satis": 49.1661,
       "unit": "TL",
       "source": "canli"
     },
     {
       "symbol": "EUR",
       "name": "Euro",
-      "alis": 55.17,
-      "satis": 55.3,
+      "alis": 55.1665,
+      "satis": 55.3045,
       "unit": "TL",
       "source": "canli"
     },
     {
       "symbol": "GBP",
       "name": "İngiliz Sterlini",
-      "alis": 64.6608,
-      "satis": 65.1689,
+      "alis": 64.6816,
+      "satis": 65.1662,
       "unit": "TL",
       "source": "canli"
     },
     {
       "symbol": "CHF",
       "name": "İsviçre Frangı",
-      "alis": 58.5339,
-      "satis": 59.1871,
+      "alis": 58.6414,
+      "satis": 59.3214,
       "unit": "TL",
       "source": "canli"
     },
     {
       "symbol": "CAD",
       "name": "Kanada Doları",
-      "alis": 33.8223,
-      "satis": 34.4742,
+      "alis": 33.8596,
+      "satis": 34.527,
       "unit": "TL",
       "source": "canli"
     },
     {
       "symbol": "AUD",
       "name": "Avustralya Doları",
-      "alis": 33.2746,
-      "satis": 33.9764,
+      "alis": 33.3054,
+      "satis": 34.0227,
       "unit": "TL",
       "source": "canli"
     },
     {
       "symbol": "SAR",
       "name": "Suudi Arabistan Riyalı",
-      "alis": 12.8499,
-      "satis": 13.3195,
+      "alis": 12.8589,
+      "satis": 13.3281,
       "unit": "TL",
       "source": "canli"
     }
