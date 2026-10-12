@@ -1,77 +1,77 @@
 {
-  "updated": "2026-10-11 00:11:04",
-  "sourceTime": "03:11:00",
+  "updated": "2026-10-12 00:12:07",
+  "sourceTime": "03:12:07",
   "source": "Kapali Carsi + Nadir Doviz (canli)",
   "gold": [
     {
       "symbol": "HAS",
       "name": "Has Altın (gram)",
-      "alis": 6611.0,
-      "satis": 6658.0,
+      "alis": 6649.89,
+      "satis": 6654.05,
       "unit": "TL",
       "source": "canli"
     },
     {
       "symbol": "GR",
       "name": "Gram Altın",
-      "alis": 6585.0,
-      "satis": 6715.0,
+      "alis": 6616.64,
+      "satis": 6674.01,
       "unit": "TL",
       "source": "canli"
     },
     {
       "symbol": "CY",
       "name": "Çeyrek Altın",
-      "alis": 10635.0,
-      "satis": 10963.0,
+      "alis": 10841.0,
+      "satis": 10879.0,
       "unit": "TL",
       "source": "canli"
     },
     {
       "symbol": "YM",
       "name": "Yarım Altın",
-      "alis": 21163.0,
-      "satis": 22420.0,
+      "alis": 21681.0,
+      "satis": 21752.0,
       "unit": "TL",
       "source": "canli"
     },
     {
       "symbol": "TM",
       "name": "Tam Altın",
-      "alis": 42288.0,
-      "satis": 44835.0,
+      "alis": 43250.0,
+      "satis": 43377.0,
       "unit": "TL",
       "source": "canli"
     },
     {
       "symbol": "AT",
       "name": "Ata Altın",
-      "alis": 43478.0,
-      "satis": 44524.0,
+      "alis": 44028.0,
+      "satis": 44475.0,
       "unit": "TL",
       "source": "canli"
     },
     {
       "symbol": "BES",
       "name": "Ata 5'li",
-      "alis": 217217.0,
-      "satis": 234795.0,
+      "alis": 219475.0,
+      "satis": 221992.0,
       "unit": "TL",
       "source": "canli"
     },
     {
       "symbol": "GRM",
       "name": "Gremse (2,5)",
-      "alis": 105656.0,
-      "satis": 112120.0,
+      "alis": 107277.0,
+      "satis": 107926.0,
       "unit": "TL",
       "source": "canli"
     },
     {
       "symbol": "22A",
       "name": "22 Ayar Altın",
-      "alis": 6029.0,
-      "satis": 6475.0,
+      "alis": 6050.19,
+      "satis": 6235.62,
       "unit": "TL",
       "source": "canli"
     },
@@ -86,8 +86,8 @@
     {
       "symbol": "ONS",
       "name": "Ons Altın",
-      "alis": 4194.45,
-      "satis": 4194.45,
+      "alis": 4200.9,
+      "satis": 4201.5,
       "unit": "$",
       "source": "canli"
     }
@@ -96,8 +96,8 @@
     {
       "symbol": "GUM",
       "name": "Gümüş (gram)",
-      "alis": 87.28,
-      "satis": 98.91,
+      "alis": 90.495,
+      "satis": 97.515,
       "unit": "TL",
       "source": "canli"
     },
@@ -122,56 +122,56 @@
     {
       "symbol": "USD",
       "name": "ABD Doları",
-      "alis": 49.13,
-      "satis": 49.2245,
+      "alis": 49.1579,
+      "satis": 49.2941,
       "unit": "TL",
       "source": "canli"
     },
     {
       "symbol": "EUR",
       "name": "Euro",
-      "alis": 54.95,
-      "satis": 55.15,
+      "alis": 54.9849,
+      "satis": 55.2037,
       "unit": "TL",
       "source": "canli"
     },
     {
       "symbol": "GBP",
       "name": "İngiliz Sterlini",
-      "alis": 64.8775,
-      "satis": 65.3396,
+      "alis": 64.921,
+      "satis": 65.4112,
       "unit": "TL",
       "source": "canli"
     },
     {
       "symbol": "CHF",
       "name": "İsviçre Frangı",
-      "alis": 58.5943,
-      "satis": 59.2475,
+      "alis": 58.7402,
+      "satis": 59.4252,
       "unit": "TL",
       "source": "canli"
     },
     {
       "symbol": "CAD",
       "name": "Kanada Doları",
-      "alis": 33.9195,
-      "satis": 34.5714,
+      "alis": 33.9775,
+      "satis": 34.6479,
       "unit": "TL",
       "source": "canli"
     },
     {
       "symbol": "AUD",
       "name": "Avustralya Doları",
-      "alis": 33.5072,
-      "satis": 34.2091,
+      "alis": 33.59,
+      "satis": 34.3103,
       "unit": "TL",
       "source": "canli"
     },
     {
       "symbol": "SAR",
       "name": "Suudi Arabistan Riyalı",
-      "alis": 12.8957,
-      "satis": 13.2344,
+      "alis": 12.9155,
+      "satis": 13.2379,
       "unit": "TL",
       "source": "canli"
     }
