@@ -1,93 +1,93 @@
 {
-  "updated": "2026-11-11 04:16:11",
-  "sourceTime": "07:16:09",
+  "updated": "2026-11-12 05:26:31",
+  "sourceTime": "08:26:28",
   "source": "Kapali Carsi + Nadir Doviz (canli)",
   "gold": [
     {
       "symbol": "HAS",
       "name": "Has Altın (gram)",
-      "alis": 6526.26,
-      "satis": 6552.5,
+      "alis": 6417.43,
+      "satis": 6442.82,
       "unit": "TL",
       "source": "canli"
     },
     {
       "symbol": "GR",
       "name": "Gram Altın",
-      "alis": 6493.62,
-      "satis": 6572.16,
+      "alis": 6385.66,
+      "satis": 6462.48,
       "unit": "TL",
       "source": "canli"
     },
     {
       "symbol": "CY",
       "name": "Çeyrek Altın",
-      "alis": 10626.0,
-      "satis": 10713.0,
+      "alis": 10449.0,
+      "satis": 10534.0,
       "unit": "TL",
       "source": "canli"
     },
     {
       "symbol": "YM",
       "name": "Yarım Altın",
-      "alis": 21278.0,
-      "satis": 21420.0,
+      "alis": 20925.0,
+      "satis": 21063.0,
       "unit": "TL",
       "source": "canli"
     },
     {
       "symbol": "TM",
       "name": "Tam Altın",
-      "alis": 42426.0,
-      "satis": 42682.0,
+      "alis": 41721.0,
+      "satis": 41970.0,
       "unit": "TL",
       "source": "canli"
     },
     {
       "symbol": "AT",
       "name": "Ata Altın",
-      "alis": 43568.0,
-      "satis": 43822.0,
+      "alis": 42844.0,
+      "satis": 43092.0,
       "unit": "TL",
       "source": "canli"
     },
     {
       "symbol": "BES",
       "name": "Ata 5'li",
-      "alis": 217350.0,
-      "satis": 218930.0,
+      "alis": 213739.0,
+      "satis": 215279.0,
       "unit": "TL",
       "source": "canli"
     },
     {
       "symbol": "GRM",
       "name": "Gremse (2,5)",
-      "alis": 105281.0,
-      "satis": 106279.0,
+      "alis": 103532.0,
+      "satis": 104507.0,
       "unit": "TL",
       "source": "canli"
     },
     {
       "symbol": "22A",
       "name": "22 Ayar Altın",
-      "alis": 5937.61,
-      "satis": 6140.1,
+      "alis": 5838.61,
+      "satis": 6037.04,
       "unit": "TL",
       "source": "canli"
     },
     {
       "symbol": "2B5",
       "name": "İkibuçuk Altın",
-      "alis": 104859.98,
-      "satis": 106536.04,
+      "alis": 104256.83,
+      "satis": 105923.76,
       "unit": "TL",
       "source": "kapanis"
     },
     {
       "symbol": "ONS",
       "name": "Ons Altın",
-      "alis": 4043.6,
-      "satis": 4044.1,
+      "alis": 3970.3,
+      "satis": 3970.8,
       "unit": "$",
       "source": "canli"
     }
@@ -96,24 +96,24 @@
     {
       "symbol": "GUM",
       "name": "Gümüş (gram)",
-      "alis": 81.205,
-      "satis": 87.81,
+      "alis": 79.639,
+      "satis": 86.244,
       "unit": "TL",
       "source": "canli"
     },
     {
       "symbol": "PLT",
       "name": "Platin (gram)",
-      "alis": 2486.52,
-      "satis": 2490.31,
+      "alis": 2485.69,
+      "satis": 2489.26,
       "unit": "TL",
       "source": "kapanis"
     },
     {
       "symbol": "PD",
       "name": "Paladyum (gram)",
-      "alis": 1663.51,
-      "satis": 1669.46,
+      "alis": 1682.59,
+      "satis": 1688.21,
       "unit": "TL",
       "source": "kapanis"
     }
@@ -122,56 +122,56 @@
     {
       "symbol": "USD",
       "name": "ABD Doları",
-      "alis": 50.1494,
-      "satis": 50.2394,
+      "alis": 50.2097,
+      "satis": 50.2797,
       "unit": "TL",
       "source": "canli"
     },
     {
       "symbol": "EUR",
       "name": "Euro",
-      "alis": 55.8619,
-      "satis": 56.0618,
+      "alis": 55.5935,
+      "satis": 55.8169,
       "unit": "TL",
       "source": "canli"
     },
     {
       "symbol": "GBP",
       "name": "İngiliz Sterlini",
-      "alis": 66.6279,
-      "satis": 67.1099,
+      "alis": 66.3124,
+      "satis": 66.8118,
       "unit": "TL",
       "source": "canli"
     },
     {
       "symbol": "CHF",
       "name": "İsviçre Frangı",
-      "alis": 60.0876,
-      "satis": 60.7657,
+      "alis": 59.7022,
+      "satis": 60.396,
       "unit": "TL",
       "source": "canli"
     },
     {
       "symbol": "CAD",
       "name": "Kanada Doları",
-      "alis": 34.7396,
-      "satis": 35.3981,
+      "alis": 34.6659,
+      "satis": 35.3415,
       "unit": "TL",
       "source": "canli"
     },
     {
       "symbol": "AUD",
       "name": "Avustralya Doları",
-      "alis": 33.8685,
-      "satis": 34.3845,
+      "alis": 33.7195,
+      "satis": 34.2444,
       "unit": "TL",
       "source": "canli"
     },
     {
       "symbol": "SAR",
       "name": "Suudi Arabistan Riyalı",
-      "alis": 13.1547,
-      "satis": 13.4724,
+      "alis": 13.0393,
+      "satis": 13.4837,
       "unit": "TL",
       "source": "canli"
     }
